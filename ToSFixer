@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-cd ~/Library/Application\ Support/Steam/steamapps/common/Town\ of\ Salem/TownOfSalem.app/Contents/Frameworks/Adobe\ AIR.framework/Versions;rm -Rf current;ln -s 1.0/ Current;cd ..;rm -Rf Resources;rm -Rf Adobe\ AIR;ln -s Versions/Current/Resources .;ln -s Versions/Current/Adobe\ AIR .
+cd ~/Library/Application\ Support/Steam/steamapps/common/Town\ of\ Salem/TownOfSalem.app/Contents/Frameworks/Adobe\ AIR.framework/Versions;[-f current] && rm current;ln -s 1.0/ Current;cd ..;[-f Resources] && rm Resources;[-f Adobe] && rm Adobe\ AIR;ln -s Versions/Current/Resources .;ln -s Versions/Current/Adobe\ AIR .
