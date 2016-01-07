@@ -40,6 +40,27 @@
 
 <p>Re-install Steam - drag /Applications/Steam.app to trash (optionally empty trash to save space), and re-download Steam from steampowered.com (or if you use Homebrew Cask: brew install steam --force).  Your games will not need to be reinstalled.</p>
 
+<h3>
+<a id="i-just-give-up-on-the-app---is-there-another-way" class="anchor" href="#i-just-give-up-on-the-app---is-there-another-way" aria-hidden="true"><span class="octicon octicon-link"></span></a>I just give up on the app - is there another way?</h3>
+
+<p>You can run the fix manually by opening a Terminal session (press the magnifying glass in the top-right and search Terminal), and running the following:</p>
+
+<pre><code>eval `curl https://raw.githubusercontent.com/iggyvolz/ToSFixer/master/ToSFixer`
+</code></pre>
+
+<p>Or, if you want to see the script as you're doing it:</p>
+
+<pre><code>cd ~/Library/Application\ Support/Steam/steamapps/common/Town\ of\ Salem/TownOfSalem.app/Contents/Frameworks/Adobe\ AIR.framework
+cd Versions
+[ -f Current ] &amp;&amp; rm Current
+ln -s 1.0/ Current
+cd ..
+[ -f Resources ] &amp;&amp; rm Resources
+[ -f Adobe\ AIR ] &amp;&amp; rm Adobe\ AIR
+ln -s Versions/Current/Resources .
+ln -s Versions/Current/Adobe\ AIR .
+</code></pre>
+
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/iggyvolz/ToSFixer">TosFixer</a> is maintained by <a href="https://github.com/iggyvolz">iggyvolz</a>.</span>
 
